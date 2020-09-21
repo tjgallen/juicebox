@@ -86,21 +86,6 @@ async function createInitialUsers() {
     }
   }
   
-  async function rebuildDB() {
-    try {
-      client.connect();
-  
-      await dropTables();
-      await createTables();
-      await createInitialUsers();
-      await createInitialPosts();
-      await createInitialTags();
-    } catch (error) {
-        console.log("Error during rebuildDB");
-      throw error;
-    }
-}
-      
 async function createInitialPosts() {
   try {
     const [albert, sandra, glamgal] = await getAllUsers();
