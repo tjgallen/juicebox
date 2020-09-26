@@ -38,7 +38,7 @@ usersRouter.get('/', async (req, res) => {
         // create token & return to user
         const token = jwt.sign(user, JWT_SECRET);
         console.log('token ', token);
-        res.send({ message: "you're logged in!", token });
+        res.send({ message: "You're logged in!", token });
       } else {
         next({ 
           name: 'IncorrectCredentialsError', 
