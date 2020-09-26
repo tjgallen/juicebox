@@ -4,7 +4,6 @@ require('dotenv').config();
 const { PORT = 3000 } = process.env;
 const express = require('express');
 const server = express();
-const chalk = require('chalk');
 
 const bodyParser = require('body-parser');
 server.use(bodyParser.json());
@@ -28,5 +27,5 @@ server.use((req, res, next) => {
   
 
 server.listen(PORT, () => {
-  console.log(`The server is up on ${chalk.yellow('localhost:')} ${chalk.green(PORT)}`);
+  console.log('The server is up on port', PORT);
 });
